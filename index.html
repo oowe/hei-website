@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>黑溜總裁の生活選物 - 打造精緻綠色生活</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- 導航欄 -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <div class="logo">黑溜總裁<span>の生活選物</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">首頁</a></li>
+                <li><a href="#daily">本日精選</a></li>
+                <li><a href="#categories">商品分類</a></li>
+                <li><a href="#about">關於我們</a></li>
+            </ul>
+            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+        </div>
+    </nav>
+
+    <!-- 主視覺橫幅 -->
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="reveal">精選好物，質享生活</h1>
+            <p class="reveal">從水族、寵物到各式各樣商品，為您網羅蝦皮電商平台的優質商品</p>
+            <div class="search-bar reveal">
+                <!-- 加上 id="searchInput" -->
+                <input type="text" id="searchInput" placeholder="搜尋感興趣的商品...">
+                <!-- 加上 id="searchBtn" -->
+                <button id="searchBtn"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 商品分類區 -->
+    <section id="categories" class="categories container">
+        <h2 class="section-title">熱門分類</h2>
+        <div class="cat-grid">
+            <div class="cat-item">
+                <div class="cat-icon"><i class="fas fa-fish"></i></div>
+                <span>水族用品</span>
+            </div>
+            <div class="cat-item">
+                <div class="cat-icon"><i class="fas fa-paw"></i></div>
+                <span>寵物用品</span>
+            </div>
+            <div class="cat-item">
+                <div class="cat-icon"><i class="fas fa-leaf"></i></div>
+                <span>生活日用</span>
+            </div>
+            <div class="cat-item">
+                <div class="cat-icon"><i class="fas fa-home"></i></div>
+                <span>居家裝飾</span>
+            </div>
+            <div class="cat-item">
+                <div class="cat-icon"><i class="fas fa-plug"></i></div>
+                <span>智能家電</span>
+            </div>
+            <div class="cat-item">
+                <div class="cat-icon"><i class="fas fa-seedling"></i></div>
+                <span>環保小物</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 篩選標籤 -->
+    <div class="filters container">
+        <button class="filter-btn active">全部</button>
+        <button class="filter-btn">水族用品</button>
+        <button class="filter-btn">生活日用</button>
+        <button class="filter-btn">寵物用品</button>
+    </div>
+
+    <!-- 商品展示區 -->
+    <section id="daily" class="products container">
+        <div class="product-grid">
+            <!-- 範例商品卡片 1 -->
+            <div class="product-card">
+                <div class="product-tag">精選</div>
+                <div class="product-img" style="background-color: #f0f0f0;">
+                    <img src="https://down-tw.img.susercontent.com/file/sg-11134201-824j1-mehokdlerzsw58.webp" alt="魚缸燈">
+                </div>
+                <div class="product-info">
+                    <h3>旗艦級高顯色防水燈</h3>
+                    <p class="desc">業界領先全防水技術，超薄機身。</p>
+                    <div class="price">NT$ 399 - NT$ 1990</div>
+                    <a href="https://shopee.tw/product-i.5504987.24580375354" target="_blank" class="buy-btn">查看詳情</a>
+                </div>
+            </div>
+            <!-- 複製多份以填充網格 -->
+            <div class="product-card">
+                <div class="product-img" style="background-color: #f0f0f0;">
+                    <img src="https://down-tw.img.susercontent.com/file/sg-11134201-824g2-mehol8lddk3oc0.webp" alt="寵物電熱毯">
+                </div>
+                <div class="product-info">
+                    <h3>極致恆溫暖寵墊</h3>
+                    <p class="desc">給毛孩最奢華的冬日睡眠。</p>
+                    <div class="price">NT$ 499</div>
+                    <a href="https://shopee.tw/product-i.5504987.15392160414" target="_blank" class="buy-btn">查看詳情</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img" style="background-color: #f0f0f0;">
+                    <img src="https://down-tw.img.susercontent.com/file/tw-11134207-81ztk-miqas7t6a68631.webp" alt="電動清潔刷">
+                </div>
+                <div class="product-info">
+                    <h3>智能電動清潔刷</h3>
+                    <p class="desc">讓頑垢瞬間消失的「家事神器」。</p>
+                    <div class="price">NT$ 299</div>
+                    <a href="https://shopee.tw/product-i.5504987.26354099361" target="_blank" class="buy-btn">查看詳情</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img" style="background-color: #f0f0f0;">
+                    <img src="https://down-tw.img.susercontent.com/file/tw-11134207-81zti-mh6dm0f1eex47c.webp" alt="暖手寶">
+                </div>
+                <div class="product-info">
+                    <h3> 隨身極簡磁吸暖手寶</h3>
+                    <p class="desc">溫暖雙手，讓你感受到家的溫暖。</p>
+                    <div class="price">NT$ 479</div>
+                    <a href="https://shopee.tw/product-i.5504987.6451450403" target="_blank" class="buy-btn">查看詳情</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 平台特色 -->
+    <section class="features">
+        <div class="container feature-grid">
+            <div class="feature-item">
+                <i class="fas fa-check-circle"></i>
+                <h4>嚴選品質</h4>
+                <p>親自試用篩選，只推薦最好的</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-bolt"></i>
+                <h4>即時更新</h4>
+                <p>同步各大電商最新優惠資訊</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-leaf"></i>
+                <h4>環保優先</h4>
+                <p>推廣友善環境的綠色產品</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-search-dollar"></i>
+                <h4>價格透明</h4>
+                <p>幫您精打細算找到最高 CP 值</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 關於我們 -->
+    <section id="about" class="about container">
+        <div class="about-content">
+            <h2 class="section-title">關於「黑溜總裁の生活選物」</h2>
+            <p>我們是一個專注於高品質生活的商品導購平台。我們的使命是透過專業的篩選眼光，為使用者在茫茫物海中精選出兼具「功能性」、「設計感」與「環保價值」的優質商品。</p>
+            <p>平台與國內外各大知名電商平台深度合作，整合跨平台的商品資訊，讓您能一站式瀏覽最受歡迎的水族、寵物及居家生活用品。我們堅持客觀推薦，致力於提升您的生活品質。</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <div class="logo">黑溜總裁<span>の生活選物</span></div>
+                <p>您的生活美學導航專家。</p>
+            </div>
+            <div class="footer-col">
+                <h4>快速連結</h4>
+                <ul>
+                    <li><a href="#">使用條款</a></li>
+                    <li><a href="#">隱私權政策</a></li>
+                    <li><a href="#">常見問題</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>合作夥伴</h4>
+                <ul>
+                    <li>電商平台</li>
+                    <li>品牌供應商</li>
+                    <li>物流夥伴</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 黑溜總裁の生活選物. All Rights Reserved.
+        </div>
+    </footer>
+
+    <!-- 返回頂部 -->
+    <button id="backToTop"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="script.js"></script>
+</body>
+</html>

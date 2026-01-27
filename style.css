@@ -1,0 +1,415 @@
+:root {
+    --primary-black: #1a1a1a;
+    --accent-green: #2d5a27; /* 環保綠點綴 */
+    --light-grey: #f4f4f4;
+    --white: #ffffff;
+    --shadow: 0 4px 15px rgba(0,0,0,0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+    line-height: 1.6;
+    color: var(--primary-black);
+    background-color: var(--white);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 導航欄 */
+.navbar {
+    background: var(--white);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    font-weight: 300;
+    font-size: 1.1rem;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: var(--primary-black);
+    margin-left: 2rem;
+    font-weight: 400;
+    transition: var(--transition);
+}
+
+.nav-links li a:hover {
+    color: var(--accent-green);
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* 主視覺 */
+.hero {
+    height: 60vh;
+    background: linear-gradient(135deg, #000000 0%, #434343 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.search-bar {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    background: var(--white);
+    padding: 5px;
+    border-radius: 50px;
+}
+
+.search-bar input {
+    flex: 1;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    outline: none;
+    font-size: 1rem;
+}
+
+.search-bar button {
+    background: var(--primary-black);
+    color: var(--white);
+    border: none;
+    padding: 0 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.search-bar button:hover {
+    background: var(--accent-green);
+}
+
+/* 分類區 */
+.section-title {
+    text-align: center;
+    margin: 4rem 0 2rem;
+    font-size: 2rem;
+    position: relative;
+}
+
+.cat-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+    text-align: center;
+}
+
+.cat-item {
+    cursor: pointer;
+}
+
+.cat-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--light-grey);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+    font-size: 1.5rem;
+    transition: var(--transition);
+}
+
+.cat-item:hover .cat-icon {
+    background: var(--primary-black);
+    color: var(--white);
+    transform: translateY(-5px);
+}
+
+/* 篩選器 */
+.filters {
+    display: flex;
+    justify-content: center;
+    margin: 3rem auto;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filter-btn {
+    padding: 8px 25px;
+    border: 1px solid #ddd;
+    background: transparent;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background: var(--primary-black);
+    color: var(--white);
+    border-color: var(--primary-black);
+}
+
+/* 商品卡片 */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+/* 商品卡片本體：固定寬度與對齊 */
+.product-card {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    position: relative;
+    display: flex;
+    flex-direction: column; /* 讓內容由上而下排列 */
+    height: 100%; /* 讓所有卡片等高 */
+}
+
+/* 圖片容器：強制所有格子高度一致 */
+.product-img {
+    height: 250px; /* 固定高度，這是版面整齊的關鍵 */
+    width: 100%;
+    background-color: #f9f9f9; /* 淺灰色背景，沒圖片時也好看 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 圖片本人：完整顯示且居中 */
+.product-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* 完整顯示整張圖，不裁切 */
+    padding: 10px; /* 給圖片一點呼吸空間 */
+}
+
+/* 精選標籤：固定在左上角 */
+.product-tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: var(--accent-green);
+    color: var(--white);
+    padding: 4px 12px;
+    font-size: 0.8rem;
+    border-radius: 4px;
+    z-index: 10; /* 確保在圖片上方 */
+    font-weight: bold;
+}
+
+/* 商品資訊區：固定高度讓按鈕對齊 */
+.product-info {
+    padding: 20px;
+    flex-grow: 1; /* 自動填滿剩餘空間 */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: var(--primary-black);
+}
+
+.product-info .desc {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 15px;
+    /* 限制描述文字最多兩行，超過顯示省略號 (保持整齊) */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.desc {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
+    height: 40px;
+    overflow: hidden;
+}
+
+.price {
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.buy-btn {
+    width: 100%;
+    padding: 12px 0;         /* 增加上下內距，左右為 0 */
+    background: var(--primary-black);
+    color: #ffffff !important; /* 強制設定文字為白色 */
+    text-decoration: none !important; /* 強制移除底線 */
+    display: block;          /* 讓連結變成塊狀，才能填滿寬度 */
+    text-align: center;      /* 文字水平居中 */
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: var(--transition);
+    border: none;
+    box-sizing: border-box;  /* 確保寬度計算正確 */
+    cursor: pointer;
+}
+
+/* 滑鼠移上去的顏色變化 */
+.buy-btn:hover {
+    background: var(--accent-green);
+    color: #ffffff !important;
+    text-decoration: none !important; /* 確保移上去也沒底線 */
+}
+
+/* 特色區 */
+.features {
+    background: var(--light-grey);
+    padding: 5rem 0;
+    margin-top: 5rem;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    text-align: center;
+}
+
+.feature-item i {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* 關於我們 */
+.about {
+    padding: 5rem 0;
+    text-align: center;
+    max-width: 800px;
+}
+
+/* Footer */
+footer {
+    background: var(--primary-black);
+    color: var(--white);
+    padding: 4rem 0 2rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 3rem;
+}
+
+.footer-col h4 {
+    margin-bottom: 1.5rem;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #333;
+    font-size: 0.9rem;
+    color: #888;
+}
+
+/* 返回頂部 */
+#backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    background: var(--accent-green);
+    color: var(--white);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    z-index: 1001;
+}
+
+/* 響應式 */
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .menu-toggle { display: block; }
+    .cat-grid { grid-template-columns: repeat(3, 1fr); }
+    .feature-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid { grid-template-columns: 1fr; text-align: center; }
+    .hero-content h1 { font-size: 2rem; }
+}
+
+/* 動畫樣式 */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
